@@ -15,21 +15,13 @@ public class ShopItem {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Getter
-    @Setter
     @Column(name = "product_identifier")
     private String productIdentifier;
 
-    @Getter
-    @Setter
     private Integer amount;
 
-    @Getter
-    @Setter
     private Float price;
 
-    @Getter
-    @Setter
     @ManyToOne
     @JoinColumn(name = "shop_id")
     private Shop shop;

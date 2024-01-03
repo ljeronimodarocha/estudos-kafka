@@ -10,11 +10,10 @@ import java.util.List;
 @Getter
 @Setter
 public class ShopDTO {
-    @Getter
-    @Setter
+
     private String identifier;
 
-    @Getter
-    @Setter
     private String status;
+
+    private String buyerIdentifier;
 }

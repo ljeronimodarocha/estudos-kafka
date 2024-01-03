@@ -13,26 +13,21 @@ import java.util.stream.Collectors;
 @Setter
 public class ShopDTO {
 
-    @Getter
-    @Setter
     private String identifier;
 
-    @Getter
-    @Setter
     private LocalDate dateShop;
 
-    @Getter
-    @Setter
     private String status;
 
-    @Getter
-    @Setter
+    private String buyerIdentifier;
+
     private List<ShopItemDTO> items = new ArrayList<>();
     public static ShopDTO convert(Shop shop) {
         ShopDTO shopDTO = new ShopDTO();
         shopDTO.setIdentifier(shop.getIdentifier());
         shopDTO.setDateShop(shop.getDateShop());
         shopDTO.setStatus(shop.getStatus());
+        shopDTO.setBuyerIdentifier(shop.getBuyerIdentifier());
         shopDTO.setItems(shop
                 .getItems()
                 .stream()

@@ -8,16 +8,10 @@ import org.shop.api.model.ShopItem;
 @Setter
 public class ShopItemDTO {
 
-    @Getter
-    @Setter
     private String productIdentifier;
 
-    @Getter
-    @Setter
     private Integer amount;
 
-    @Getter
-    @Setter
     private Float price;
 
     public static ShopItemDTO convert(ShopItem shopItem) {

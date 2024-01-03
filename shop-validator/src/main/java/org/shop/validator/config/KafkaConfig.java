@@ -20,6 +20,7 @@ import java.util.Map;
 public class KafkaConfig {
     @Value(value = "${kafka.bootstrapAddress:localhost:9092}")
     private String bootstrapAddress;
+
     public ProducerFactory<String, ShopDTO> producerFactory() {
         Map<String, Object> props = new HashMap<>();
         props.put(

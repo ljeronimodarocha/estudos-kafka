@@ -16,10 +16,17 @@ public class Shop {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     private String identifier;
+
     private String status;
+
     @Column(name = "date_shop")
     private LocalDate dateShop;
+
+    @Column(name = "buyer_identifier")
+    private String buyerIdentifier;
+
     @OneToMany(fetch = FetchType.EAGER,
             cascade = CascadeType.ALL,
             mappedBy = "shop")
@@ -28,10 +35,11 @@ public class Shop {
         shop.setIdentifier(shopDTO.getIdentifier());
         shop.setStatus(shopDTO.getStatus());
         shop.setDateShop(shopDTO.getDateShop());
+        shop.setBuyerIdentifier(shopDTO.getBuyerIdentifier());
         shop.setItems(shopDTO
                 .getItems()
                 .stream()
-                .map(i -> ShopItem.convert(i))
+                .map(ShopItem::convert)
                 .collect(Collectors.toList()));
         return shop;
     }

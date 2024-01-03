@@ -10,19 +10,14 @@ import java.util.List;
 @Getter
 @Setter
 public class ShopDTO {
-    @Getter
-    @Setter
+
     private String identifier;
 
-    @Getter
-    @Setter
     private LocalDate dateShop;
 
-    @Getter
-    @Setter
     private String status;
 
-    @Getter
-    @Setter
+    private String buyerIdentifier;
+
     private List<ShopItemDTO> items = new ArrayList<>();
 }

@@ -1,6 +1,7 @@
 CREATE TABLE shop
  (
  id integer primary key auto_increment,
+ buyer_identifier varchar(100) not null,
  identifier varchar NOT null,
  status varchar NOT null,
  date_shop date

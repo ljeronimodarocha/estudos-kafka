@@ -1,7 +1,7 @@
 package org.shop.api.controller;
 
 import lombok.RequiredArgsConstructor;
-import org.shop.api.events.KafkaClient;
+import org.shop.api.events.SendKafkaMessage;
 import org.shop.api.model.Shop;
 import org.shop.api.model.ShopItem;
 import org.shop.api.model.dto.ShopDTO;
@@ -19,7 +19,7 @@ import java.util.stream.Collectors;
 public class ShopController {
 
     private final ShopRepository shopRepository;
-    private final KafkaClient kafkaClient;
+    private final SendKafkaMessage kafkaClient;
 
     @GetMapping
     public List<ShopDTO> getShop() {
